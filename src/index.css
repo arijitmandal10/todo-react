@@ -72,7 +72,9 @@ button:focus-visible {
 }
 .todo-list {
 	margin: 10px;
-	box-shadow: 1px 1px 10px 0px #ffffff47;
+	/* border-left: 1px solid; */
+	box-shadow: 1px 1px 7px #ffffff69;
+
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
@@ -89,7 +91,18 @@ button:focus-visible {
 .completed > div {
 	display: flex;
 	flex-direction: column;
+	gap: 40px;
 	align-items: flex-start;
+}
+.todo-card {
+	padding: 7px;
+	/* box-shadow: 1px 1px 7px #ffffff69; */
+}
+.cp {
+	box-shadow: 1px 1px 7px #33c94969;
+}
+.ac {
+	box-shadow: 1px 1px 7px #c9333369;
 }
 .todo-card > span {
 	font-size: large;

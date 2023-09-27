@@ -7,7 +7,10 @@ function TodoList({ todos, saveTodos }) {
 		const updatedTodos = todos.map((todo) => (todo.createdAt === createdAt ? { ...todo, completed: !todo.completed } : todo));
 		saveTodos(updatedTodos);
 	};
-
+	const checkboxStyle = {
+		width: '20px', // Set the desired width
+		height: '20px', // Set the desired height
+	};
 	const smallScreenStyle = {
 		margin: '0px -2px -4px -7px',
 	};
@@ -33,8 +36,14 @@ function TodoList({ todos, saveTodos }) {
 						<p style={{ marginLeft: '20px', marginTop: '10px' }}>no active todos!! 😁</p>
 					) : (
 						activeTodos.map((todo) => (
-							<div key={todo.createdAt} className='todo-card'>
-								<input type='checkbox' checked={todo.completed} onChange={() => toggleComplete(todo.createdAt)} />
+							<div key={todo.createdAt} className='todo-card ac'>
+								<input
+									type='checkbox'
+									style={checkboxStyle}
+									checked={todo.completed}
+									onChange={() => toggleComplete(todo.createdAt)}
+								/>{' '}
+								&nbsp;
 								<span>{todo.text}</span>
 							</div>
 						))
@@ -51,8 +60,14 @@ function TodoList({ todos, saveTodos }) {
 						<p style={{ marginLeft: '20px', marginTop: '10px' }}>no completed todos!! 😓</p>
 					) : (
 						completedTodos.map((todo) => (
-							<div key={todo.createdAt} className='todo-card completed'>
-								<input type='checkbox' checked={todo.completed} onChange={() => toggleComplete(todo.createdAt)} />
+							<div key={todo.createdAt} className='todo-card completed cp'>
+								<input
+									type='checkbox'
+									style={checkboxStyle}
+									checked={todo.completed}
+									onChange={() => toggleComplete(todo.createdAt)}
+								/>{' '}
+								&nbsp;
 								<span style={{ textDecoration: 'line-through' }}>{todo.text}</span>
 							</div>
 						))
